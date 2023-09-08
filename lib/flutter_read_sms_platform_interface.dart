@@ -1,6 +1,7 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 import 'flutter_read_sms_method_channel.dart';
+import 'models/sms.dart';
 
 abstract class FlutterReadSmsPlatform extends PlatformInterface {
   /// Constructs a FlutterReadSmsPlatform.
@@ -25,5 +26,13 @@ abstract class FlutterReadSmsPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Stream<SMS> get streamIncomingSms => 
+    throw UnimplementedError('streamIncomingSms() has not been implemented.');
+  
+
+  void initStreamIncomingSms() {
+    throw UnimplementedError('initStreamIncomingSms() has not been implemented.');
   }
 }
