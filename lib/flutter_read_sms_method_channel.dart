@@ -37,6 +37,7 @@ class MethodChannelFlutterReadSms extends FlutterReadSmsPlatform {
   void initStreamIncomingSms() {
     _channelStreamSubscription = _channel.receiveBroadcastStream().listen((e) {
       if (!_controller.isClosed) {
+        print('kkkkkkkkkkkkkkkkkkkkkkkkkkkkk $e');
         _controller.sink.add(SMS.fromJson(e));
       }
     });
