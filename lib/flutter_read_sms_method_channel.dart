@@ -19,14 +19,14 @@ class MethodChannelFlutterReadSms extends FlutterReadSmsPlatform {
   @override
   Stream<SMS> get streamIncomingSms => _controller.stream as Stream<SMS>;
 
-
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('flutter_read_sms');
 
   @override
   Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
+    final version =
+        await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
 
@@ -36,6 +36,7 @@ class MethodChannelFlutterReadSms extends FlutterReadSmsPlatform {
   @override
   void initStreamIncomingSms() {
     _channelStreamSubscription = _channel.receiveBroadcastStream().listen((e) {
+      print('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv $e');
       if (!_controller.isClosed) {
         print('kkkkkkkkkkkkkkkkkkkkkkkkkkkkk $e');
         _controller.sink.add(SMS.fromJson(e));
