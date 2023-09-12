@@ -40,7 +40,7 @@ class MethodChannelFlutterReadSms extends FlutterReadSmsPlatform {
       print('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv $e');
       if (!_controller.isClosed) {
         print('kkkkkkkkkkkkkkkkkkkkkkkkkkkkk $e');
-        _controller.sink.add(SMS.fromJson(e));
+        _controller.sink.add(SMS.fromJson(e.cast<String, dynamic>()));
       }
     });
   }
