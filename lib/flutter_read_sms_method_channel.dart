@@ -35,11 +35,8 @@ class MethodChannelFlutterReadSms extends FlutterReadSmsPlatform {
   /// sms is received
   @override
   void initStreamIncomingSms() {
-    print('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
     _channelStreamSubscription = _channel.receiveBroadcastStream().listen((e) {
-      print('vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv $e');
       if (!_controller.isClosed) {
-        print('kkkkkkkkkkkkkkkkkkkkkkkkkkkkk $e');
         _controller.sink.add(SMS.fromJson(e.cast<String, dynamic>()));
       }
     });

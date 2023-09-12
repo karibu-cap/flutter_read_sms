@@ -65,7 +65,6 @@ class FlutterReadSmsPlugin: FlutterPlugin, EventChannel.StreamHandler, Broadcast
           put("sender",sender)
           put("timeReceived",timestamp.toString())
         }
-        Log.d("SMS", "Sender: $sender, Body: $body, Timestamp: $timestamp")
       }
 
       val concatenatedBody = sb.toString() // Get the concatenated body.
@@ -73,7 +72,6 @@ class FlutterReadSmsPlugin: FlutterPlugin, EventChannel.StreamHandler, Broadcast
         put("body",concatenatedBody)
       }
       Log.d("Result SMS Concatenated Body ", "Concatenated Body: $concatenatedBody")
-      Log.d("Result SMS", "Concatenated Body: $concatenatedBody")
       eventSink?.success(response)
     }
   }
