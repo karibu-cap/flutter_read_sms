@@ -12,6 +12,6 @@ class FlutterReadSms {
   
   
   void initStreamIncomingSms() {
-     FlutterReadSmsPlatform.instance.initStreamIncomingSms;
+     FlutterReadSmsPlatform.instance.initStreamIncomingSms();
   }
 }
