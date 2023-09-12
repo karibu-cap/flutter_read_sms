@@ -72,7 +72,8 @@ class FlutterReadSmsPlugin: FlutterPlugin, EventChannel.StreamHandler, Broadcast
       response.apply {
         put("body",concatenatedBody)
       }
-      Log.d("SMS", "Concatenated Body: $concatenatedBody")
+      Log.d("Result SMS Concatenated Body ", "Concatenated Body: $concatenatedBody")
+      Log.d("Result SMS", "Concatenated Body: $concatenatedBody")
       eventSink?.success(response)
     }
   }
